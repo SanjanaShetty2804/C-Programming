@@ -1,0 +1,12 @@
+🔧 Project Plan: To-Do List Manager (CLI)
+🗂️ Features for Phase 1:
+    1)Add Task
+    2)View All Tasks
+    3)Mark Task as Complete
+    4)Exit Program (Save Tasks)
+
+stdio.h => for print f and scanf (input and output)
+string.h => string tools: deleting \nan
+#define => to hold up a constant 
+struct name{...}=> creating note
+        ... =>char note[100]; int completed
