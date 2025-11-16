@@ -1,0 +1,121 @@
+📌Project: Command-Line Interface (CLI) Calculator
+💡 What it is:
+A CLI Calculator is a terminal-based program that performs 
+basic arithmetic operations like addition, subtraction, 
+multiplication, division, etc., based on user input. 
+It helps solidify your understanding of:
+1) Control flow (if/switch)
+2)Loops
+3)Functions
+4)scanf/printf
+5) Input validation
+
+🛠️ Features:
+
+✅ Phase 1 – Basic Operations
+ 1)Addition
+ 2)Subtraction
+ 3)Multiplication
+ 4)Division
+
+⏭️ Phase 2 – Enhanced Features (optional extras)
+ 1)Modulus
+ 2)Power (exponentiation)
+ 3)Multiple operations in a loop
+ 4)Exit condition
+
+ 🧠 Skills You’ll Learn:
+1)Structuring a basic C program
+2)Using switch-case for operation selection
+3)Error-checking (like division by zero)
+4)Creating reusable functions
+
+🧪 Sample Output:
+--- Simple CLI Calculator ---
+Enter first number: 12
+Enter operation (+ - * /): *
+Enter second number: 3
+Result: 36
+Do you want to perform another operation? (y/n): y
+
+LIBRARIES:
+🔢 Arithmetic Functions
+| Function            | Purpose                          | Example                |
+| ------------------- | -------------------------------- | ---------------------- |
+| `double pow(x, y)`  | x raised to the power y          | `pow(2, 3)` → 8.0      |
+| `double sqrt(x)`    | Square root                      | `sqrt(25)` → 5.0       |
+| `double cbrt(x)`    | Cube root                        | `cbrt(27)` → 3.0       |
+| `double fmod(x, y)` | Floating-point remainder (x % y) | `fmod(5.3, 2.0)` → 1.3 |
+| `double fabs(x)`    | Absolute value (float)           | `fabs(-3.14)` → 3.14   |
+| `int abs(x)`        | Absolute value (int)             | `abs(-5)` → 5          |
+
+🧮 Rounding Functions
+| Function   | Purpose                       | Example            |
+| ---------- | ----------------------------- | ------------------ |
+| `floor(x)` | Round **down** to nearest int | `floor(3.9)` → 3.0 |
+| `ceil(x)`  | Round **up** to nearest int   | `ceil(3.1)` → 4.0  |
+| `round(x)` | Round to nearest int          | `round(3.5)` → 4.0 |
+| `trunc(x)` | Truncate decimal part         | `trunc(3.9)` → 3.0 |
+
+📐 Trigonometric Functions
+| Function  | Purpose               | Example             |
+| --------- | --------------------- | ------------------- |
+| `sin(x)`  | Sine                  | `sin(M_PI/2)` → 1.0 |
+| `cos(x)`  | Cosine                | `cos(0)` → 1.0      |
+| `tan(x)`  | Tangent               | `tan(M_PI/4)` → 1.0 |
+| `asin(x)` | Arcsin (inverse sine) | `asin(1)` → 1.57    |
+| `acos(x)` | Arccos                | `acos(0)` → 1.57    |
+| `atan(x)` | Arctangent            | `atan(1)` → 0.785   |
+🧮 Use M_PI from #define _USE_MATH_DEFINES or define it manually:
+#define M_PI 3.14159265358979323846
+
+📈 Exponential and Logarithmic Functions
+| Function   | Purpose              | Example             |
+| ---------- | -------------------- | ------------------- |
+| `exp(x)`   | e raised to x        | `exp(1)` → 2.718    |
+| `log(x)`   | Natural log (base e) | `log(2.718)` → 1.0  |
+| `log10(x)` | Log base 10          | `log10(1000)` → 3.0 |
+
+🚀 Other Handy Functions
+| Function         | Purpose                    | Example                |
+| ---------------- | -------------------------- | ---------------------- |
+| `hypot(x, y)`    | `√(x² + y²)` (Pythagorean) | `hypot(3, 4)` → 5.0    |
+| `copysign(x, y)` | Copy sign of y into x      | `copysign(3, -1)` → -3 |
+
+🧠 1. Precision-Aware Functions
+When you're dealing with performance or scientific accuracy, 
+you’ll want to use functions with better numerical stability.
+| Function                | Description                                            | Use-case                                       |
+| ----------------------- | ------------------------------------------------------ | ---------------------------------------------- |
+| `fma(x, y, z)`          | Performs (x \* y) + z with **single rounding**         | High-precision arithmetic in physics, graphics |
+| `remainder(x, y)`       | IEEE remainder (can be negative)                       | Better than `fmod` for some scientific uses    |
+| `nextafter(x, y)`       | Gets the **next representable double** from x toward y | Useful in simulations, numerical methods       |
+| `nan("")`               | Generates a NaN (Not a Number)                         | Input validation, fault handling               |
+| `isnan(x)` / `isinf(x)` | Test for NaN or infinity                               | Robust math libraries and safety checks        |
+
+📈 2. Fast & Efficient Trigonometry
+These matter in domains like signal processing, robotics, 
+game dev, and embedded:
+| Function                       | Description                                                                     |
+| ------------------------------ | ------------------------------------------------------------------------------- |
+| `sinh(x), cosh(x), tanh(x)`    | Hyperbolic trig functions                                                       |
+| `asinh(x), acosh(x), atanh(x)` | Inverse hyperbolics                                                             |
+| `atan2(y, x)`                  | Arc tangent with correct quadrant detection — very useful in 2D/3D calculations |
+
+📊 3. Logarithmic & Exponential Variants
+For optimization and modeling:
+| Function       | Description                                                       |
+| -------------- | ----------------------------------------------------------------- |
+| `log1p(x)`     | Accurate for log(1 + x) when x is small (prevents precision loss) |
+| `expm1(x)`     | Accurate for eˣ − 1 when x is small                               |
+| `logb(x)`      | Gets exponent of x in base-2 form                                 |
+| `scalbn(x, n)` | Multiply x by 2ⁿ efficiently (faster than pow)                    |
+
+🧪 4. Floating-Point Classification
+Understanding how floating point behaves under the hood is huge in 
+systems or embedded jobs.
+| Function        | Purpose                                             |
+| --------------- | --------------------------------------------------- |
+| `fpclassify(x)` | Classify float as NaN, Inf, Normal, Subnormal, Zero |
+| `signbit(x)`    | Checks if number is negative                        |
+| `isfinite(x)`   | Checks if number is finite (not Inf or NaN)         |
